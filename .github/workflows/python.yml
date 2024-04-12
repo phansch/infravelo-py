@@ -1,0 +1,19 @@
+name: CI
+on: pull_request
+
+jobs:
+  ci:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+      - name: Run image
+        uses: abatilo/actions-poetry@v2
+      - name: Install packages
+        run: poetry install
+      - name: Prep mypy
+        run: poetry run mypy scraper api-fetcher || true && poetry run mypy --non-interactive --install-types
+      - name: Run mypy
+        run: poetry run mypy api-fetcher
