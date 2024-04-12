@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "infravelo-py"
+version = "0.1.0"
+description = ""
+authors = ["Philipp Hansch <dev@phansch.net>"]
+readme = "README.md"
+packages = [
+    { include = "api-fetcher" },
+    { include = "scraper" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.31.0"
+beautifulsoup4 = "^4.12.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+fetcher = "api-fetcher.main:run"
