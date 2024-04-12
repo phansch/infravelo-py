@@ -16,4 +16,4 @@ jobs:
       - name: Prep mypy
         run: poetry run mypy scraper api-fetcher || true && poetry run mypy --non-interactive --install-types
       - name: Run mypy
-        run: poetry run mypy api-fetcher
+        run: poetry run mypy scraper api-fetcher
