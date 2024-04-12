@@ -13,9 +13,9 @@ def get_projects():
         next_page_url = next_page["next"]
         yield next_page
 
-def run():
+def all_projects() -> list[dict]:
     all_projects = []
     for page in get_projects():
         all_projects += page["results"]
 
-    all_projects
+    return all_projects
