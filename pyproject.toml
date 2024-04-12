@@ -22,5 +22,5 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-fetcher = "api-fetcher.main:run"
+fetcher = "api-fetcher.core:run"
 download = "scraper.core:test"
