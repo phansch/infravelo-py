@@ -5,8 +5,9 @@ description = ""
 authors = ["Philipp Hansch <dev@phansch.net>"]
 readme = "README.md"
 packages = [
-    { include = "api-fetcher" },
-    { include = "scraper" }
+    { include = "api_fetcher" },
+    { include = "scraper" },
+    { include = "sync" }
 ]
 
 [tool.poetry.dependencies]
@@ -16,6 +17,7 @@ beautifulsoup4 = "^4.12.3"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "*"
+pytest = "*"
 
 [build-system]
 requires = ["poetry-core"]
@@ -24,3 +26,4 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.scripts]
 fetcher = "api_fetcher.core:run"
 download = "scraper.core:test"
+infravelo-sync = "sync.core:run"
