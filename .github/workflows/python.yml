@@ -14,8 +14,8 @@ jobs:
       - name: Install packages
         run: poetry install
       - name: Prep mypy
-        run: poetry run mypy scraper api_fetcher || true && poetry run mypy --non-interactive --install-types
+        run: poetry run mypy --explicit-package-bases scraper api_fetcher || true && poetry run mypy --explicit-package-bases --non-interactive --install-types
       - name: Run mypy
-        run: poetry run mypy scraper api_fetcher
+        run: poetry run mypy --explicit-package-bases scraper api_fetcher
       - name: Run pytest tests
         run: poetry run pytest
