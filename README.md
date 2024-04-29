@@ -3,7 +3,8 @@
 Some tools based on the [infravelo.de](https://infravelo.de) API and website.
 
 * API fetcher
-* Download of all possible planning documents (not yet implemented. See #1)
+* Download of all possible planning documents of active projects
+* Comparison of changes over time (not yet implemented. See #1 and #6)
 
 ## Running
 
