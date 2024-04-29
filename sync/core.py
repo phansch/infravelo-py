@@ -46,7 +46,7 @@ def run():
         print(f"Scraping {project["link"]}")
         document_urls = scraper.get_document_urls_from_page(project['link'])
         for url in document_urls:
-            path = dir_for_project / filename_from_url(url)
+            path = dir_for_project(project) / filename_from_url(url)
             print(f"Downloading {url} to {path}")
             response = requests.get(url)
             with open(path, 'wb') as f:
