@@ -6,8 +6,9 @@ from datetime import date
 import json
 
 def project_to_json(project: dict):
-    dest = core.dir_for_project(project) / date.today() / "project.json"
-    with open(dest, "w") as outfile:
+    filepath = core.dir_for_project(project) / date.today().strftime("%Y-%m-%d") / "project.json"
+    core.create_dir_if_not_exists(filepath.parent)
+    with open(filepath, "w") as outfile:
         json.dump(project, outfile)
 
 def run():

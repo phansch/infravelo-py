@@ -25,7 +25,10 @@ def dir_for_project(project) -> Path:
 
 def create_project_dirs(projects):
     for project in projects:
-        dir_for_project(project).mkdir(parents=True,exist_ok=True)
+        create_dir_if_not_exists(dir_for_project(project))
+
+def create_dir_if_not_exists(path: Path):
+    path.mkdir(parents=True,exist_ok=True)
 
 def run():
     runner.run()
