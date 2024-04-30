@@ -1,5 +1,7 @@
 # infravelo-py
 
+[![CI](https://github.com/phansch/infravelo-py/actions/workflows/python.yml/badge.svg)](https://github.com/phansch/infravelo-py/actions/workflows/python.yml)
+
 Some tools based on the [infravelo.de](https://infravelo.de) API and website.
 
 * API fetcher
