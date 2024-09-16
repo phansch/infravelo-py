@@ -17,7 +17,7 @@ def run():
     print(f"Downloaded {len(all_projects)} projects from the Infravelo API")
 
     # Select projects that are not finished yet, to avoid needless scraping
-    projects_to_scrape = list(filter(core.without_done_projects, all_projects))
+    projects_to_scrape = list(filter(core.is_project_to_scrape, all_projects))
     print(f"About to scrape {len(projects_to_scrape)} projects.")
 
     core.create_project_dirs(projects_to_scrape)

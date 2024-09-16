@@ -11,8 +11,17 @@ class ProjectState(Enum):
     IN_PLANNING = "in Planung"
     ENVISAGED = "Vorgesehen"
 
+
+def is_project_to_scrape(project):
+    return without_done_projects(project) and without_bike_racks(project)
+
+
 def without_done_projects(project):
     return project['status'] != ProjectState.DONE.value
+
+def without_bike_racks(project):
+    return project["types"][0]["type"] != "Anlehnb\u00fcgel"
+
 
 def project_slug_from_url(project_url):
     return project_url.split('/')[-2]
