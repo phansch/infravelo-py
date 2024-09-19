@@ -9,7 +9,7 @@ def project_to_json(project: dict):
     filepath = core.dir_for_project(project) / date.today().strftime("%Y-%m-%d") / "project.json"
     core.create_dir_if_not_exists(filepath.parent)
     with open(filepath, "w") as outfile:
-        json.dump(project, outfile)
+        json.dump(project, outfile, indent=4)
 
 def run():
     today = date.today() # format: 2024-12-21
